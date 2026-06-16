@@ -1,0 +1,7 @@
+node_modules/
+.npm-cache/
+dist/
+qa-screenshots/
+dev-server.log
+.wrangler/
+.DS_Store
