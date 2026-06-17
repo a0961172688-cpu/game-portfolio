@@ -28,7 +28,8 @@ const r2Base = "https://pub-85cae68a87384aafb8bc82eedaaa3928.r2.dev";
 const r2Path = (path) => `${r2Base}/${path.split("/").map(encodeURIComponent).join("/")}`;
 const media = (path) => (isLocalPreview ? `/@fs/${root}/${path}` : r2Path(path));
 const poster = (id) => `/posters/${id}.jpg`;
-const playUrl = (id) => (isLocalPreview ? `/play/${id}/index.html` : `${r2Base}/play/${id}/index.html`);
+const playUrl = (id) =>
+  isLocalPreview || ["water-park", "plane"].includes(id) ? `/play/${id}/index.html` : `${r2Base}/play/${id}/index.html`;
 const resumeUrl = "/assets/resume.pdf";
 
 const projects = [
