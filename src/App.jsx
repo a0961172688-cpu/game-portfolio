@@ -26,7 +26,18 @@ const isLocalPreview =
     window.location.hostname.startsWith("192.168."));
 const r2Base = "https://pub-85cae68a87384aafb8bc82eedaaa3928.r2.dev";
 const r2Path = (path) => `${r2Base}/${path.split("/").map(encodeURIComponent).join("/")}`;
-const media = (path) => (isLocalPreview ? `/@fs/${root}/${path}` : r2Path(path));
+const remoteMedia = {
+  "缄灯：归渡/演示视频.mp4": `${r2Base}/videos/jian-deng.mp4`,
+  "黑暗骑士/24032121230-李本研/24032121230-李本研-游戏演示.mp4": `${r2Base}/videos/dark-knight.mp4`,
+  "公司战争/演示视频.mp4": `${r2Base}/videos/company-war.mp4`,
+  "三星堆展馆/三星堆1 2026.01.22 - 08.36.05.07.mp4": `${r2Base}/videos/sanxingdui.mp4`,
+  "VR博物馆/演示视频.mp4": `${r2Base}/videos/vr-museum.mp4`,
+  "水上乐园/演示视频.mp4": `${r2Base}/videos/water-park.mp4`,
+  "恐怖游戏/演示视频.mp4": `${r2Base}/videos/horror.mp4`,
+  "数据漫游/演示视频.mp4": `${r2Base}/videos/data-roam.mp4`,
+  "飞机大战/演示视频.mp4": `${r2Base}/videos/plane.mp4`,
+};
+const media = (path) => (isLocalPreview ? `/@fs/${root}/${path}` : remoteMedia[path] ?? r2Path(path));
 const poster = (id) => `/posters/${id}.jpg`;
 const playUrl = (id) =>
   isLocalPreview || ["water-park", "plane"].includes(id) ? `/play/${id}/index.html` : `${r2Base}/play/${id}/index.html`;
