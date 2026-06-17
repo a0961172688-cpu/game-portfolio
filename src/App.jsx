@@ -24,9 +24,11 @@ const isLocalPreview =
     window.location.hostname === "127.0.0.1" ||
     window.location.hostname.startsWith("10.") ||
     window.location.hostname.startsWith("192.168."));
-const media = (path) => (isLocalPreview ? `/@fs/${root}/${path}` : "");
+const r2Base = "https://pub-85cae68a87384aafb8bc82eedaaa3928.r2.dev";
+const r2Path = (path) => `${r2Base}/${path.split("/").map(encodeURIComponent).join("/")}`;
+const media = (path) => (isLocalPreview ? `/@fs/${root}/${path}` : r2Path(path));
 const poster = (id) => `/posters/${id}.jpg`;
-const playUrl = (id) => `/play/${id}/index.html`;
+const playUrl = (id) => (isLocalPreview ? `/play/${id}/index.html` : `${r2Base}/play/${id}/index.html`);
 const resumeUrl = "/assets/resume.pdf";
 
 const projects = [
@@ -41,8 +43,9 @@ const projects = [
     tools: ["Codex", "Unity", "AI Voice", "Skill 插件"],
     video: media("缄灯：归渡/演示视频.mp4"),
     play: {
-      type: "cdn",
-      label: "完整试玩包待 R2 接入",
+      type: "web",
+      label: "WebGL Play",
+      url: playUrl("jian-deng"),
     },
     brief:
       "Codex 全程开发的 2D 游戏，从美术、程序、音效到人物语音模型接入完整独立完成。",
@@ -75,9 +78,9 @@ const projects = [
     tools: ["Unity", "Claude Code", "Trea", "Team"],
     video: media("公司战争/演示视频.mp4"),
     play: {
-      type: "cdn",
-      label: "完整试玩包待 R2 接入",
-      packageUrl: media("公司战争/Cow/DotMatrixAgreement.exe"),
+      type: "web",
+      label: "WebGL Play",
+      url: playUrl("company-war"),
     },
     brief: "与川大合作竞赛项目，负责程序与策划设计，延展为后续多项高校游戏赛事作品。",
   },
@@ -92,8 +95,9 @@ const projects = [
     tools: ["Unity", "3D", "展馆交互"],
     video: media("三星堆展馆/三星堆1 2026.01.22 - 08.36.05.07.mp4"),
     play: {
-      type: "cdn",
-      label: "试玩包过大，需 CDN 接入",
+      type: "web",
+      label: "WebGL Play",
+      url: playUrl("sanxingdui"),
     },
     brief: "大一下学期完成的文化展馆项目，负责程序实现与策划组织。",
   },
@@ -150,8 +154,9 @@ const projects = [
     tools: ["Unity", "3D", "校园项目"],
     video: media("数据漫游/演示视频.mp4"),
     play: {
-      type: "cdn",
-      label: "试玩包过大，需 CDN 接入",
+      type: "web",
+      label: "WebGL Play",
+      url: playUrl("data-roam"),
     },
     brief: "寒假期间承接其他学校作业小游戏的一部分，聚焦漫游和数据空间展示。",
   },
