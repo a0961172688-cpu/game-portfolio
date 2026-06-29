@@ -219,7 +219,7 @@ const nav = [
 ];
 
 const skillGroups = [
-  ["编程语言", ["C#", "C++"]],
+  ["编程语言", ["C#", "C++", "Python", "Shaders", "GLSL"]],
   ["游戏引擎", ["Unity", "URP", "Photon", "Oculus SDK", "WebGL"]],
   ["工具平台", ["Git", "Visual Studio", "Rider", "Blender", "Photoshop"]],
   ["AI 工具", ["Trea", "Claude Code", "Codex", "GPT 生图", "nanobanana2 生图"]],
