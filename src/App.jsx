@@ -219,10 +219,10 @@ const nav = [
 ];
 
 const skillGroups = [
-  ["编程语言", ["C#", "C++", "Python", "Shaders", "GLSL"]],
+  ["编程语言", ["C#", "C++"]],
   ["游戏引擎", ["Unity", "URP", "Photon", "Oculus SDK", "WebGL"]],
   ["工具平台", ["Git", "Visual Studio", "Rider", "Blender", "Photoshop"]],
-  ["AI 工具", ["Trea", "Claude Code", "Codex", "Midjourney", "Suno"]],
+  ["AI 工具", ["Trea", "Claude Code", "Codex", "GPT 生图", "nanobanana2 生图"]],
   ["开发知识", ["游戏策划", "系统架构", "剧情制作", "语音模型", "独立闭环"]],
 ];
 
@@ -522,7 +522,7 @@ export function App() {
               ["需求 & 设计", "Trea", "创意拆解 / 任务拆分"],
               ["架构 & 代码", "Claude Code", "复杂逻辑 / 代码重构"],
               ["实现 & 调试", "Codex", "功能实现 / 问题修复"],
-              ["美术 & 音频", "Midjourney / Suno", "素材灵感 / 音效生成"],
+              ["美术 & 音频", "GPT 生图 / nanobanana2", "生图辅助 / 音效素材查找"],
               ["测试 & 优化", "Playtest / AI", "体验反馈 / 平衡调整"],
               ["发布 & 运营", "Unity Build", "构建发布 / 复盘分析"],
             ].map(([step, tool, note]) => (
