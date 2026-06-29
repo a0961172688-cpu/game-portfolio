@@ -111,7 +111,7 @@ const projects = [
       label: "WebGL Play",
       url: playUrl("sanxingdui"),
     },
-    brief: "大一下学期完成的文化展馆项目，负责程序实现与策划组织。",
+    brief: "大一下学期完成的文化展馆项目，负责程序实现与策划组织，并开始尝试用 GPT 辅助代码理解与功能实现。",
   },
   {
     id: "vr-museum",
@@ -201,7 +201,7 @@ const competitions = [
 
 const timeline = [
   ["大一", "Unity 起步", "跟教程敲代码，完成恐怖游戏雏形。"],
-  ["大一下", "三星堆展馆", "负责程序与策划，开始做展馆类 3D 交互。"],
+  ["大一下", "GPT 辅助编程 / 三星堆展馆", "开始接触 AI 写代码，用 GPT 辅助理解逻辑与实现功能，同时负责三星堆展馆的程序与策划。"],
   ["大二上", "VR 与 3D 项目", "水上乐园、VR 博物馆、漫游类项目集中产出。"],
   ["寒假", "接单小游戏", "承接学校作业小游戏，拓展交付经验。"],
   ["大二下", "AI 工具链", "Trea、Claude Code、Codex 进入主力开发流。"],
@@ -344,8 +344,8 @@ export function App() {
             <p className="eyebrow">GAME DEVELOPER / PROGRAMMER</p>
             <h1>用代码构建想象<br />用 <span>AI</span> 放大创造</h1>
             <p className="hero-text">
-              从大一自学 Unity 到 AI 工具链加持的独立游戏开发者。专注游戏玩法、系统架构、
-              沉浸式展馆与 2D 叙事体验，全流程覆盖策划、程序、美术、音效和发布。
+              成都东软学院在读，从大一自学 Unity 到大一下开始用 GPT 辅助写代码，再到 AI 工具链加持的独立游戏开发者。
+              专注游戏玩法、系统架构、游戏策划、沉浸式展馆与 2D 叙事体验，全流程覆盖策划、程序、美术、音效和发布。
             </p>
             <div className="hero-actions">
               <a href="#projects">查看项目库</a>
@@ -600,8 +600,8 @@ export function App() {
             </div>
             <dl className="profile-list">
               <div><dt>姓名</dt><dd>李本研</dd></div>
-              <div><dt>学校</dt><dd>四川大学（在读）</dd></div>
-              <div><dt>方向</dt><dd>游戏开发 / 程序设计</dd></div>
+              <div><dt>学校</dt><dd>成都东软学院（在读）</dd></div>
+              <div><dt>方向</dt><dd>游戏开发 / 程序设计 / 游戏策划</dd></div>
             </dl>
             <a className="download" href={resumeUrl} target="_blank" rel="noreferrer">
               查看完整简历 PDF <DownloadSimple size={20} />
