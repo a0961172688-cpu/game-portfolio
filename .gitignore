@@ -5,3 +5,5 @@ qa-screenshots/
 dev-server.log
 .wrangler/
 .DS_Store
+.game-builds/
+.migration-upload-state.json

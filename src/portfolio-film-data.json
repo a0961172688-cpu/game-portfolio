@@ -1,0 +1,112 @@
+[
+  {
+    "id": "pandaku-story",
+    "project": "pandaku",
+    "series": "玩法实验",
+    "title": "Pandaku · 把逻辑题做成一款游戏",
+    "summary": "商业定制开发实录，从规则、棋盘到移动端反馈。",
+    "cover": "/portfolio/films/pandaku-story.webp",
+    "video": "/portfolio/films/pandaku-story.mp4",
+    "duration": 91
+  },
+  {
+    "id": "jian-deng-01",
+    "project": "jian-deng",
+    "series": "缄灯归渡",
+    "title": "01 · 名字被封进灯里",
+    "summary": "从一盏灯开始，走进缄灯归渡的故事。",
+    "cover": "/portfolio/films/jian-deng-01.webp",
+    "video": "/portfolio/films/jian-deng-01.mp4",
+    "duration": 138
+  },
+  {
+    "id": "jian-deng-02",
+    "project": "jian-deng",
+    "series": "缄灯归渡",
+    "title": "02 · 纸马铺里的线索",
+    "summary": "纸马铺的探索、物品与机关，如何一起推进叙事。",
+    "cover": "/portfolio/films/jian-deng-02.webp",
+    "video": "/portfolio/films/jian-deng-02.mp4",
+    "duration": 147
+  },
+  {
+    "id": "jian-deng-highlight",
+    "project": "jian-deng",
+    "series": "缄灯归渡",
+    "title": "一盏灯，一段归途",
+    "summary": "缄灯归渡的短篇高光与作品介绍。",
+    "cover": "/portfolio/films/jian-deng-highlight.webp",
+    "video": "/portfolio/films/jian-deng-highlight.mp4",
+    "duration": 35
+  },
+  {
+    "id": "bainian-01",
+    "project": "bainian",
+    "series": "百廿列车",
+    "title": "01 · 序章、列车与斗地主",
+    "summary": "把展厅、列车和一局小游戏，串成故事的开场。",
+    "cover": "/portfolio/films/bainian-01.webp",
+    "video": "/portfolio/films/bainian-01.mp4",
+    "duration": 117
+  },
+  {
+    "id": "bainian-02",
+    "project": "bainian",
+    "series": "百廿列车",
+    "title": "02 · 插画叙事与史料档案",
+    "summary": "让插画、人物与史料成为可探索的叙事片段。",
+    "cover": "/portfolio/films/bainian-02.webp",
+    "video": "/portfolio/films/bainian-02.mp4",
+    "duration": 118
+  },
+  {
+    "id": "bainian-03",
+    "project": "bainian",
+    "series": "百廿列车",
+    "title": "03 · 抗战粮仓与第三节车厢",
+    "summary": "用调查和任务链，连接粮仓场景与新的列车章节。",
+    "cover": "/portfolio/films/bainian-03.webp",
+    "video": "/portfolio/films/bainian-03.mp4",
+    "duration": 97
+  },
+  {
+    "id": "bainian-carriage",
+    "project": "bainian",
+    "series": "百廿列车",
+    "title": "第三节车厢 · 一段新的旅程",
+    "summary": "第三节车厢的阶段开发实录，保留字幕与声音设计。",
+    "cover": "/portfolio/films/bainian-carriage.webp",
+    "video": "/portfolio/films/bainian-carriage.mp4",
+    "duration": 306
+  },
+  {
+    "id": "bainian-chapter",
+    "project": "bainian",
+    "series": "百廿列车",
+    "title": "第三章 · 把任务做成体验",
+    "summary": "年代里的探索、对话与小游戏，逐步走向完整章节。",
+    "cover": "/portfolio/films/bainian-chapter.webp",
+    "video": "/portfolio/films/bainian-chapter.mp4",
+    "duration": 213
+  },
+  {
+    "id": "ai-horror-scene",
+    "project": null,
+    "series": "玩法实验",
+    "title": "AI 场景实验 · 走进恐怖空间",
+    "summary": "记录一次用 AI 辅助制作 3D 恐怖场景的尝试。",
+    "cover": "/portfolio/films/ai-horror-scene.webp",
+    "video": "/portfolio/films/ai-horror-scene.mp4",
+    "duration": 96
+  },
+  {
+    "id": "muyan-first",
+    "project": null,
+    "series": "创作手记",
+    "title": "第一条视频 · 木砚做游戏",
+    "summary": "关于开始做游戏，也关于开始记录自己。",
+    "cover": "/portfolio/films/muyan-first.webp",
+    "video": "/portfolio/films/muyan-first.mp4",
+    "duration": 110
+  }
+]

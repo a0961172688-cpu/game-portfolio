@@ -7,6 +7,15 @@
 /play/plane/Build/*.js.gz
   Content-Type: application/javascript
 
+/play/dead-frame/Build/*.gz
+  Content-Encoding: gzip
+
+/play/dead-frame/Build/*.wasm.gz
+  Content-Type: application/wasm
+
+/play/dead-frame/Build/*.js.gz
+  Content-Type: application/javascript
+
 /portfolio/*
   Cache-Control: public, max-age=3600
   X-Content-Type-Options: nosniff
