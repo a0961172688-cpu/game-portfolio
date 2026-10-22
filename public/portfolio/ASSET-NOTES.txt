@@ -1,0 +1,7 @@
+木砚作品集素材说明
+实机截图与视频：由用户提供的游戏演示、开发录屏和Codex剪辑成片导出。没有将参考同学网站的角色、美术或作品复制为本站素材。
+paper-botanical.webp / png：内置ImageGen按用户已确认的效果图生成的装饰背景，不属于游戏内实机画面。
+serif-chinese.woff2：Noto Serif SC，经Google Fonts按本站字符子集提供；许可见FONT-LICENSE.txt。
+UI图标：Phosphor Icons，沿用工程依赖。
+雨夜漫步中角色为外部VRM样例；相关说明保留于项目详情，不声称人物全部原创。
+简历：用户已确认的新版个人简历。网页只展示用户已有的联系邮箱与GitHub，不新增手机号字段。

@@ -1,0 +1,12 @@
+/play/plane/Build/*.gz
+  Content-Encoding: gzip
+
+/play/plane/Build/*.wasm.gz
+  Content-Type: application/wasm
+
+/play/plane/Build/*.js.gz
+  Content-Type: application/javascript
+
+/portfolio/*
+  Cache-Control: public, max-age=3600
+  X-Content-Type-Options: nosniff

@@ -1,43 +1,42 @@
-source visual truth path: C:\Users\lby38\.codex\generated_images\019ed065-9634-7a60-9de5-5ed91a66f7e5\ig_04c345d27a634311016a31432d6ed081919a7928ae9b9e09ad.png
-implementation screenshot path: B:\简历作品\portfolio-prototype\qa-screenshots\desktop-full.png
-mobile screenshot path: B:\简历作品\portfolio-prototype\qa-screenshots\mobile-full.png
-interaction screenshot path: B:\简历作品\portfolio-prototype\qa-screenshots\desktop-filter-2d.png
-playable screenshot path: B:\简历作品\portfolio-prototype\qa-screenshots\playable-modal.png
-viewport: desktop 1440 x 1024, mobile 390 x 844
-state: default landing page with selected project "缄灯：归渡"; interaction state covers the "2D" project filter.
-full-view comparison evidence: source visual was opened locally and compared against `qa-screenshots\desktop-full.png`.
-focused region comparison evidence: checked hero/status bar, featured project video panel, project board cards, AI pipeline, competition tracker, timeline, skills/contact panels, and mobile stacked layout.
+# 木砚纸张作品集验收 · 2026-10-22
 
-**Findings**
-- No actionable P0/P1/P2 issues remain.
+source visual truth path: B:/简历作品/作品评估_20261022/design-reference/direction-paper-archive.png
+implementation screenshot path: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio/desktop-final.png
+mobile screenshot path: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio/mobile-archive.png
+mobile detail screenshot path: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio/mobile-detail-final.png
+full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio/design-comparison.jpg
 
-**Required Fidelity Surfaces**
-- Fonts and typography: implementation uses a compact technical sans stack plus monospace labels to match the console mock. Heading scale, label density, and Chinese wrapping are stable on desktop and mobile.
-- Spacing and layout rhythm: desktop preserves the source structure: sticky left console, top status bar, two-column hero, large featured video, 4-column project board, pipeline, competition tracker, timeline, and bottom skills/contact grid. Mobile stacks cleanly without overlap.
-- Colors and visual tokens: dark graphite base, signal green, restrained orange, blue-gray text, thin borders, and low-elevation panels match the selected AI Game Lab Console direction.
-- Image quality and asset fidelity: all project cards use real poster frames extracted from the user's local demo videos. The featured project uses the real demo video with controls. No generic placeholder boxes remain.
-- Copy and content: site content follows the confirmed brief, removes "指挥交通", includes the user's Unity learning path, AI tooling, Sichuan University collaboration, competition history, Codex-built 2D games, responsibilities, real projects, and resume PDF entry.
+验收对象：vite.portfolio.config.mjs 的生产构建，IAB http://127.0.0.1:4175/。
+选定效果图 1374×1145；桌面视口 1374×1145，截图内容 1359×1133。并排对比图将两张完整首屏等比缩放至各 900×750 区域，未裁掉主体。
+补充视口：手机 390×844、平板 768×1024、宽屏 1920×1080。
+默认状态：首页、百廿列车文件夹选中。交互覆盖 Pandaku、百廿列车、雨夜漫步与断帧详情，以及更多作品和手机导航。
 
-**Interaction Checks**
-- Desktop default page loads without console or page errors.
-- Project filter "2D" works and shows only "缄灯：归渡" and "黑暗骑士".
-- Real local video sources and resume PDF are reachable through the Vite server.
-- Playable build launcher is connected with 7 playable entries; 水上乐园 WebGL opens inside the embedded trial modal.
-- Responsive mobile screenshot shows readable one-column sections with no obvious clipping.
+## 视觉对照
 
-**Open Questions**
-- Contact email/GitHub/Bilibili are placeholders because exact public links were not provided.
+- 已在同一张并排图中实际查看来源与实现，逐区检查导航、英雄区、照片叠层、章节标题、文件夹和预览卡片。
+- 保留暖白纸张、鼠尾草绿/浅粉/淡紫文件夹、中文衬线标题、木砚大标题、游戏实机照片和玫瑰色按钮。
+- 使用本地 Noto Serif SC 字体子集、真实游戏截图、独立生成的水彩植物装饰。文字与交互由 HTML/CSS 实现。
+- 用户新增内容要求将效果图四个文件夹扩为七个，雨夜漫步和断帧置于百廿列车之后；早期六件作品放入可展开区域。
+- P2 已修复：首屏与档案垂直间距偏大；预览文案居中导致标题下沉；平板宣传语出现单字孤行。
+- P3 保留：装饰植物、纸边与图标不是效果图逐像素复刻；主结构与阅读层级保持一致。
+- 没有未解决的 P0/P1/P2 视觉问题。
 
-**Implementation Checklist**
-- Completed: build passes with `npm run build`.
-- Completed: Playwright desktop, filter, and mobile screenshots captured.
-- Completed: generated project posters under `public/posters`.
-- Completed: removed blocked QA status after Playwright verification.
-- Completed: added playable build section, inline web trial modal, and local Windows package entries where browser embedding is not possible.
+## 功能与内容
 
-**Follow-up Polish**
-- [P3] The horror game poster is intentionally dark because the selected source frame is very low-light. A brighter later frame can be selected if desired.
-- [P3] Add real GitHub, Bilibili, email, phone, or portfolio domain when ready.
+- 13 个项目都有本地截图和压缩 MP4，产物逐项存在且单文件低于 24 MiB；旧 R2 外链返回 403，已替换。
+- 重点文件夹鼠标选择、键盘方向键切换、手机横向滑动有效；详情视频读取到有效时长，百廿列车实际播放成功。
+- Pandaku 竖屏视频保持比例；详情直达并刷新可用；返回目录恢复滚动位置、选择和焦点。
+- 手机菜单展开、选择导航后收起；更多作品展开显示六项；网站无横向溢出、未发现损坏图片。
+- PDF、Word 简历、字体响应 200。PDF 为用户确认的李本研-个人简历.pdf 的网站副本。
+- 飞机大战、水上乐园 WebGL 实际加载到游戏画面。原游戏有 Unity 持久化/场景对象警告，未阻止加载。原试玩的桌面画布不作为手机触控适配承诺。
+- 信息为李本研/木砚、成都东软学院、数字媒体技术本科在读、已确认邮箱和 GitHub；网页未新增私人手机号字段。
+- Pandaku 仅写 Android 构建与 TestFlight 内测；雨夜漫步写 Three.js/VRM；断帧写机制原型。新增项目起止年月沿用已核对简历，未编造早期项目日期。
+- 首页不预加载全部视频；视频在详情中以 metadata 方式加载，图片使用 WebP。
+- 主站浏览器无 console error。构建通过；新增三个 TS/TSX 文件的严格类型检查通过。
 
-patches made since previous QA pass: added Playwright QA, generated real video poster frames, connected poster assets, recaptured desktop/mobile/interaction screenshots, added playable build launcher and verified WebGL iframe playback.
+## 发布状态
+
+本地功能与视觉通过。Cloudflare 登录已过期，重新登录流程等待本人授权时超时；正式网站尚未更新，不能将本地通过写成线上验收通过。
+此前新媒体页面源文件与素材不重置、不混入本轮源码提交；本地存在这些源文件时可构建备用 new-media.html 入口。
+
 final result: passed

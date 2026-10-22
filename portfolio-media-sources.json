@@ -1,0 +1,93 @@
+[
+  {
+    "id": "pandaku",
+    "source": "C:\\Users\\lby38\\Videos\\屏幕录制\\屏幕录制 2026-10-22 211108.mp4",
+    "poster": "pandaku.webp",
+    "video": "pandaku.mp4",
+    "bytes": 11759706
+  },
+  {
+    "id": "bainian",
+    "source": "B:\\简历作品\\edit\\sau-history-leadership-video\\renders\\川农校史互动项目_领导汇报版.mp4",
+    "poster": "bainian.webp",
+    "video": "bainian.mp4",
+    "bytes": 5605916
+  },
+  {
+    "id": "rain-night",
+    "source": "C:\\Users\\lby38\\Videos\\屏幕录制\\屏幕录制 2026-10-21 222344.mp4",
+    "poster": "rain-night.webp",
+    "video": "rain-night.mp4",
+    "bytes": 9115099
+  },
+  {
+    "id": "dead-frame",
+    "source": "C:\\Users\\lby38\\Videos\\屏幕录制\\edit\\GPT6复刻武士零_激动配音无黑屏版_v2.mp4",
+    "poster": "dead-frame.webp",
+    "video": "dead-frame.mp4",
+    "bytes": 4060875
+  },
+  {
+    "id": "jian-deng",
+    "source": "B:\\简历作品\\博主视频剪辑\\缄灯归渡系列-03\\renders\\缄灯归渡_开发实录03_无声戏台与灯楼_画面同步版_IndexTTS2配音成片.mp4",
+    "poster": "jian-deng.webp",
+    "video": "jian-deng.mp4",
+    "bytes": 8237191
+  },
+  {
+    "id": "dark-knight",
+    "source": "B:\\简历作品\\博主视频剪辑\\黑暗骑士战斗展示-01\\FINAL\\黑暗骑士_战斗展示_最终成片.mp4",
+    "poster": "dark-knight.webp",
+    "video": "dark-knight.mp4",
+    "bytes": 2780863
+  },
+  {
+    "id": "water-park",
+    "source": "B:\\简历作品\\博主视频剪辑\\水上乐园系统展示-01\\renders\\水上乐园_开发实录_画面同步修正版_纸马铺同款特效_IndexTTS2成片.mp4",
+    "poster": "water-park.webp",
+    "video": "water-park.mp4",
+    "bytes": 10415492
+  },
+  {
+    "id": "company-war",
+    "source": "B:\\简历作品\\公司战争\\演示视频.mp4",
+    "poster": "company-war.webp",
+    "video": "company-war.mp4",
+    "bytes": 6831466
+  },
+  {
+    "id": "sanxingdui",
+    "source": "B:\\简历作品\\三星堆展馆\\三星堆1 2026.01.22 - 08.36.05.07.mp4",
+    "poster": "sanxingdui.webp",
+    "video": "sanxingdui.mp4",
+    "bytes": 4091437
+  },
+  {
+    "id": "vr-museum",
+    "source": "B:\\简历作品\\VR博物馆\\演示视频.mp4",
+    "poster": "vr-museum.webp",
+    "video": "vr-museum.mp4",
+    "bytes": 669913
+  },
+  {
+    "id": "data-roam",
+    "source": "B:\\简历作品\\数据漫游\\演示视频.mp4",
+    "poster": "data-roam.webp",
+    "video": "data-roam.mp4",
+    "bytes": 5129457
+  },
+  {
+    "id": "horror",
+    "source": "B:\\简历作品\\恐怖游戏\\演示视频.mp4",
+    "poster": "horror.webp",
+    "video": "horror.mp4",
+    "bytes": 16927494
+  },
+  {
+    "id": "plane",
+    "source": "B:\\简历作品\\飞机大战\\演示视频.mp4",
+    "poster": "plane.webp",
+    "video": "plane.mp4",
+    "bytes": 7741756
+  }
+]
