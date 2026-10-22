@@ -40,3 +40,29 @@ full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshot
 此前新媒体页面源文件与素材不重置、不混入本轮源码提交；本地存在这些源文件时可构建备用 new-media.html 入口。
 
 final result: passed
+
+## 第二轮扩展验收 2026-10-23
+
+本轮实现提交：9530472；生产构建 main-CuxZR6A2.js / main-DOOpgrD2.css。严格 TypeScript 检查与 Vite 构建通过。675个部署文件共约234MB，单文件均低于25MiB；24个独立MP4，其中18支列入视频档案（其余为其他项目演示）。
+
+source visual truth path: B:/简历作品/作品评估_20261022/design-reference/direction-paper-archive.png
+implementation screenshot path: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio-round2/desktop-hero.png
+full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshots/portfolio-round2/design-comparison.jpg
+其他证据：同目录 desktop-films.png、mobile-films.png、mobile-awards.png、tablet-awards.png、wide-films.png、rain-play.png。
+
+已实际打开并排完整首屏比较，保留既定纸张、衬线、照片叠层、文件夹与配色；按用户新增内容增加轮播控件、视频系列、比赛与试玩书架。平板获奖区完整截图已实际查看，未发现裁切或溢出。390×844、768×1024、1374×1145、1920×1080代表视口 DOM 无横向溢出，未见损坏图片；宽屏截图受当时浏览器可见宽度限制，DOM尺寸单独记录。
+
+已验证：
+
+- 6张封面自动变化、指定封面切换、暂停控件；悬停和焦点暂停逻辑保留。
+- 视频系列数量18/6/4/7/1，手机“继续翻阅”展开18卡片；百廿列车筛选后进入118秒视频实际播放，返回保留6条筛选、滚动与焦点。
+- 雨夜漫步加载完整角色和雨夜街区，点击开始进入游戏，便利店导航显示交互提示，控制台未见error。
+- 创意奖与4项参赛经历按旧记录区分，未伪造证书或奖项结果。
+- 公司战争原R2入口实际加载标题画面，无console error；各旧试玩文件完整性与缺项见PLAYABLE-MIGRATION.md。
+- Pandaku新增Windows包SHA256与用户交付相符，GitHub Release已核对6个公开资产的实际名称和大小。
+- 断帧隔离源码WebGL构建成功、0错误、约18.8MB；本地WASM响应200、gzip及application/wasm正确。
+
+本轮限制：断帧浏览器运行验收期间浏览器控制连接断开，尚未完成键盘游玩检查，不把构建成功当作该项运行通过。新Cloudflare账户尚无有效CLI授权，未发布新网站；投递邮箱尚未完成可操作登录，未发送简历。当前公开简历附件仍待新网址发布后由最终Word/PDF替换。
+
+视觉 final result: passed
+新域名线上验收、断帧键盘试玩、最终简历换址与真实邮件投递：pending
