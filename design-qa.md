@@ -36,7 +36,7 @@ full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshot
 
 ## 发布状态
 
-本地功能与视觉通过。Cloudflare 登录已过期，重新登录流程等待本人授权时超时；正式网站尚未更新，不能将本地通过写成线上验收通过。
+本地功能与视觉通过。源码实施提交 e8e9ceb 已成功推送原仓库 main。Cloudflare 登录已过期，重新登录等待本人授权时超时；实际在新浏览器页面打开 game-portfolio.pages.dev 仍为旧新媒体版本，正式网站尚未更新，不能将本地通过写成线上验收通过。
 此前新媒体页面源文件与素材不重置、不混入本轮源码提交；本地存在这些源文件时可构建备用 new-media.html 入口。
 
 final result: passed
