@@ -1,5 +1,6 @@
 /play/plane/Build/*.gz
   Content-Encoding: gzip
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
 
 /play/plane/Build/*.wasm.gz
   Content-Type: application/wasm
@@ -9,6 +10,7 @@
 
 /play/dead-frame/Build/*.gz
   Content-Encoding: gzip
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
 
 /play/dead-frame/Build/*.wasm.gz
   Content-Type: application/wasm

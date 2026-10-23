@@ -5,6 +5,7 @@
 页面样式：src/portfolio.css。公开素材和已确认简历：public/portfolio/。
 轮播、视频档案、比赛与试玩书架：src/PortfolioExtras.tsx、src/portfolio-extras.css。
 18 支视频的系列、标题与播放路径：src/portfolio-film-data.json；原片映射与压缩记录在 portfolio-film-sources.json、scripts/prepare-portfolio-films.py。
+正式地址：https://muyan-game-portfolio.pages.dev/ 。2026-10-23 已发布并核验 HTTP 200；两页最终简历已同步至网站，线上PDF与本地最终版SHA-256相符（0D7D2C664F97C43931B26CEC65172CBA68A9DDA38821E084025B729DD548BF73）。
 
 ## 本地运行
 
@@ -33,22 +34,26 @@ scripts/prepare-portfolio-media.py 记录本机原片位置与压缩方法；por
 ## 试玩与导出
 
 雨夜漫步位于 public/play/rain-night，角色、动作、第三方脚本和许可证均随本地静态包保留。
-断帧浏览器构建位于 public/play/dead-frame，Unity 6000.0.82f1 WebGL，所有部署文件低于25 MiB；public/_headers 保留 gzip 编码与 WASM MIME。电脑键盘操作，未承诺手机触控。
+断帧浏览器构建位于 public/play/dead-frame，Unity 6000.0.82f1 WebGL，所有部署文件低于25 MiB；public/_headers 保留 gzip 编码、WASM MIME 与 no-transform 处理，入口增加防御性 gzip 解压 bootstrap，兼容托管层未保留编码头的情况。实际公网加载及键盘操作验收见 design-qa.md；未承诺手机触控。
 构建工具 scripts/UnityPortfolioWebBuild.cs 只在 D:/PortfolioWebBuilds/DeadFrame 隔离副本运行，不改原项目；本机 Unity WebGL 模块已补齐。原始构建日志和产物在忽略的 .game-builds。
 四个大型旧 WebGL 在本地由 scripts/portfolio-local-builds.mjs 只读服务原构建；公网保留原 R2 同源入口。可用 VITE_GAME_ASSETS_URL 切换迁移后的资产域名。旧缄灯远端有部分运行资源缺失，不能仅凭核心文件200宣称已完成迁移；详见 PLAYABLE-MIGRATION.md。
 完整旧试玩资源导出：B:/简历作品/木砚网站_试玩资源.zip；目录映射在 playable-migration-manifest.json。Pages25 MiB限制不允许把该3GB资源ZIP或旧大型data直接放入 public。
 新试玩下载发布页：https://github.com/a0961172688-cpu/game-portfolio/releases/tag/portfolio-playables-20261023 。
 
-## 发布到现有 Cloudflare Pages
+## 更新已上线的 Cloudflare Pages
 
-旧项目 game-portfolio 属于不可登录的旧账号；新部署必须显式选定用户当前新账号，不复用旧缓存中的账号 ID。构建后：
+当前新账号 c6c92c3ebe9d0151ee5e5a76a574188f 的 CLI OAuth 已成功授权，Pages 项目为 muyan-game-portfolio。正常更新使用现有授权，构建后执行：
 
 ```powershell
-npx wrangler login
-$env:CLOUDFLARE_ACCOUNT_ID='<核对后的新账号ID>'
-npx wrangler pages deploy dist --project-name '<新项目名>' --branch main
+$env:CLOUDFLARE_ACCOUNT_ID='c6c92c3ebe9d0151ee5e5a76a574188f'
+node node_modules/wrangler/bin/wrangler.js pages deploy dist --project-name muyan-game-portfolio --branch main --commit-dirty=true
 ```
 
-登录由用户本人完成。部署后以 CLI 返回地址验收，再核对 https://game-portfolio.pages.dev/。
-旧 b2f1101b.game-portfolio.pages.dev 是固定历史部署网址，不会自动变为新版本。
+部署后以 CLI 返回的该次部署地址验收，再核对 https://muyan-game-portfolio.pages.dev/ 。仅在 CLI 明确报告授权失效时处理重新登录，登录授权仍由用户本人完成。
+旧项目 game-portfolio 属于不可登录的旧账号，不能复用其缓存账号ID；旧 game-portfolio.pages.dev 与 b2f1101b.game-portfolio.pages.dev 分别保留旧站和固定历史部署，不会自动变为新版本。大型旧R2运行资源仍有缺项，网站发布成功不等于旧试玩资源已全部迁移。
 发布和远端源码同步是不同状态，不能凭本地提交或构建成功宣称已上线。
+
+## 简历与投递记录
+
+最终投递版为 B:/简历作品/李本研_游戏开发简历.docx 与同名PDF，两页；网站副本位于 public/portfolio/li-benyan-resume.docx、li-benyan-resume.pdf。更新简历时同步两种格式及网站副本，并保留可点击的正式新网址。
+本次已授权使用381983619@qq.com向campus@staruniongame.com申请星合互娱前端开发实习生（Unity客户端方向）。邮件及PDF附件已准备，正在完成实际发送；只有已发送文件夹核对收件人、主题及附件后才能记录投递成功，最终状态见 design-qa.md 与 B:/简历作品/投递准备/。

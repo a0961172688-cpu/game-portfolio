@@ -18,6 +18,7 @@
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
+        <p id="unity-load-status" role="status" style="color:#ddd;text-align:center;font:14px sans-serif">正在准备试玩资源…</p>
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
@@ -114,10 +115,43 @@
 
       document.querySelector("#unity-loading-bar").style.display = "block";
 
+      // A CDN may decode, preserve, or re-encode a .gz response. Inspect the
+      // actual bytes before giving Unity consistently decoded Blob URLs.
+      var resourceBlobs = [];
+      async function prepareResource(url, mimeType) {
+        var response = await fetch(url);
+        if (!response.ok) throw new Error("资源下载失败（" + response.status + "），请刷新重试。");
+        var bytes = new Uint8Array(await response.arrayBuffer());
+        for (var layer = 0; bytes[0] === 31 && bytes[1] === 139; layer++) {
+          if (layer >= 3 || typeof DecompressionStream === "undefined") {
+            throw new Error("浏览器无法解压试玩资源，请使用最新版 Chrome 或 Edge。");
+          }
+          var stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+          bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+        }
+        var blobUrl = URL.createObjectURL(new Blob([bytes], { type: mimeType }));
+        resourceBlobs.push(blobUrl);
+        return blobUrl;
+      }
+      window.addEventListener("pagehide", function () {
+        resourceBlobs.forEach(function (url) { URL.revokeObjectURL(url); });
+      }, { once: true });
+
       var script = document.createElement("script");
       script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+      script.onerror = function () { unityShowBanner("启动文件加载失败，请刷新重试。", "error"); };
+      script.onload = async () => {
+        try {
+          var prepared = await Promise.all([
+            prepareResource(config.dataUrl, "application/octet-stream"),
+            prepareResource(config.frameworkUrl, "application/javascript"),
+            prepareResource(config.codeUrl, "application/wasm")
+          ]);
+          config.dataUrl = prepared[0];
+          config.frameworkUrl = prepared[1];
+          config.codeUrl = prepared[2];
+          document.querySelector("#unity-load-status").textContent = "正在启动游戏…";
+          await createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
@@ -125,10 +159,12 @@
                   unityInstance.SetFullscreen(1);
                 };
 
-              }).catch((message) => {
-                alert(message);
               });
-            };
+        } catch (message) {
+          document.querySelector("#unity-load-status").textContent = "启动失败，请刷新重试";
+          unityShowBanner(String(message), "error");
+        }
+      };
 
       document.body.appendChild(script);
 

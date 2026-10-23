@@ -34,7 +34,7 @@ full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshot
 - 首页不预加载全部视频；视频在详情中以 metadata 方式加载，图片使用 WebP。
 - 主站浏览器无 console error。构建通过；新增三个 TS/TSX 文件的严格类型检查通过。
 
-## 发布状态
+## 首轮发布状态（历史记录）
 
 本地功能与视觉通过。源码实施提交 e8e9ceb 已成功推送原仓库 main。Cloudflare 登录已过期，重新登录等待本人授权时超时；实际在新浏览器页面打开 game-portfolio.pages.dev 仍为旧新媒体版本，正式网站尚未更新，不能将本地通过写成线上验收通过。
 此前新媒体页面源文件与素材不重置、不混入本轮源码提交；本地存在这些源文件时可构建备用 new-media.html 入口。
@@ -62,7 +62,19 @@ full-view comparison evidence: B:/简历作品/portfolio-prototype/qa-screenshot
 - Pandaku新增Windows包SHA256与用户交付相符，GitHub Release已核对6个公开资产的实际名称和大小。
 - 断帧隔离源码WebGL构建成功、0错误、约18.8MB；本地WASM响应200、gzip及application/wasm正确。
 
-本轮限制：断帧浏览器运行验收期间浏览器控制连接断开，尚未完成键盘游玩检查，不把构建成功当作该项运行通过。新Cloudflare账户尚无有效CLI授权，未发布新网站；投递邮箱尚未完成可操作登录，未发送简历。当前公开简历附件仍待新网址发布后由最终Word/PDF替换。
+本轮初次验收限制（后续进展见下一节）：断帧运行验收及正式发布当时尚未完成。
 
 视觉 final result: passed
-新域名线上验收、断帧键盘试玩、最终简历换址与真实邮件投递：pending
+## 新账号正式发布与最终简历 · 2026-10-23
+
+- 正式域名：https://muyan-game-portfolio.pages.dev/ 。已通过新账户 OAuth 和 Pages CLI 发布，最新部署 https://08b9b0b0.muyan-game-portfolio.pages.dev 。原 game-portfolio 项目保留在旧账号。
+- 正式首页 HTTP 200，实际浏览器可见纸张版作品集、7个主要文件夹、18条视频档案；页面图片均正常。
+- 两页 Word / PDF 简历已写入新正式域名并同步网站下载。两页渲染图逐页实际检查，未见溢出或截断。线上下载 PDF 的 SHA256 与本地投递版一致：0D7D2C664F97C43931B26CEC65172CBA68A9DDA38821E084025B729DD548BF73。
+- Pandaku Windows 0.1.27 与 Android 0.1.27 公开 Release 文件及字节数已核对；用户提供的 Windows 压缩包 SHA256 与发布源一致。
+- 实际公网站点发现 Unity gzip 资源被 Pages 二次压缩：HEAD 的 Content-Encoding 不能证明 GET 可用。保留 MIME / 编码规则并增加 no-transform；GET 实测仍可能有两层 gzip，所以 DeadFrame 启动页根据 gzip 魔数循环解压最多3层，转为已解压 Blob URL 再交给 Unity。框架和 WASM 最终解压内容逐字节与本地源一致，WASM 魔数正确。不会把46MB未压缩 WASM 直接部署到 Pages。
+- 修复后浏览器 loading/status 消失，Unity 已初始化，未再出现原先“Unable to parse framework.js.gz”红色错误。控制台存在原项目 Consolas / Microsoft YaHei UI 字体警告；在最终画面及键盘操作检查时浏览器连接中断，尚不将该项记录为完整游玩通过。
+- 雨夜漫步正式入口实际加载到“开始漫步”界面；此前本地版本已完成街区与便利店交互检查，正式入口进入场景后的复验未完成。
+- 最新部署包已导出为 B:/简历作品/木砚网站_部署包.zip，675文件、216010243字节，包含最终简历与压缩容错启动页；所有部署文件低于25MiB。
+- QQ 邮箱已重新登录，正确收件人 campus@staruniongame.com、主题“成都东软学院+李本研+前端开发实习生”、新网址正文及最终 PDF（485KB）已在草稿界面逐项核对。浏览器连接在发送前中断，邮件仍未发送，等待恢复后在已发送文件夹核对。
+
+正式站发布及简历换址：passed。断帧完整键盘试玩、正式雨夜进入场景复验与真实邮件发送：pending。
